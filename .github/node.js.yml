@@ -26,9 +26,8 @@ jobs:
       - name: Build my App
         run: npm run build && npm run export && touch ./out/.nojekyll
 
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.4.1
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: public # The branch the action will deploy to
-          FOLDER: out # The folder the action will deploy to
+          deploy_key: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
