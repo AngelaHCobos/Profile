@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="188px" height="179px" viewBox="0 0 188 179" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="94.8450971%" y1="6.43027491%" x2="7.868915%" y2="94.2565148%" id="linearGradient-1">
+            <stop stop-color="#CE450F" offset="0%"></stop>
+            <stop stop-color="#CF450F" offset="47.9764216%"></stop>
+            <stop stop-color="#E74F14" offset="61.3665853%"></stop>
+            <stop stop-color="#DC4E16" offset="100%"></stop>
+        </linearGradient>
+        <path d="M17.8185698,36.9008138 C19.7957729,28.5101911 28.2004806,20.1054256 36.5911789,18.1282047 L58.8537378,12.8821578 C67.2443604,10.9049548 72.3324356,16.0762058 70.2204946,24.4236843 L64.7366008,46.0988569 C62.6236646,54.450269 54.1367006,62.9342946 45.7892221,65.0462356 L24.1140494,70.5301294 C15.7626373,72.6430656 10.5953021,67.554071 12.572523,59.1633726 L17.8185698,36.9008138 Z" id="path-2"></path>
+        <linearGradient x1="100%" y1="58.8218153%" x2="0%" y2="58.8218153%" id="linearGradient-4">
+            <stop stop-color="#E5BA09" offset="0%"></stop>
+            <stop stop-color="#E5BA09" offset="74.3103027%"></stop>
+            <stop stop-color="#FFD217" offset="75.2441406%"></stop>
+            <stop stop-color="#FFD217" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Website" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard-7-Copy" transform="translate(-306.000000, -111.000000)">
+            <g id="Group-3" transform="translate(306.000000, 111.000000)">
+                <ellipse id="Mask-Copy" fill="#4A4A4A" cx="94" cy="89" rx="83" ry="79"></ellipse>
+                <polygon id="Rectangle-100" fill="#000000" opacity="0.400000006" transform="translate(119.500000, 124.000000) rotate(31.000000) translate(-119.500000, -124.000000) " points="74 101 165 101 157.500544 145.499039 74 147"></polygon>
+                <path d="M94,179 C42.0852335,179 0,138.929485 0,89.5 C0,40.0705149 42.0852335,0 94,0 C145.914766,0 188,40.0705149 188,89.5 C188,138.929485 145.914766,179 94,179 Z M94,168 C139.839634,168 177,132.630495 177,89 C177,45.3695048 139.839634,10 94,10 C48.1603658,10 11,45.3695048 11,89 C11,132.630495 48.1603658,168 94,168 Z" id="Combined-Shape" fill="#FFCD00"></path>
+                <g id="Group-6-Copy" transform="translate(54.000000, 55.000000)">
+                    <g id="Rectangle-7-Copy-2" transform="translate(0.000000, 12.000000)" fill="url(#linearGradient-1)">
+                        <path d="M17.8185698,36.9008138 C19.7957729,28.5101911 28.2004806,20.1054256 36.5911789,18.1282047 L58.8537378,12.8821578 C67.2443604,10.9049548 72.3324356,16.0762058 70.2204946,24.4236843 L64.7366008,46.0988569 C62.6236646,54.450269 54.1367006,62.9342946 45.7892221,65.0462356 L24.1140494,70.5301294 C15.7626373,72.6430656 10.5953021,67.554071 12.572523,59.1633726 L17.8185698,36.9008138 Z" transform="translate(41.418746, 41.729242) rotate(45.000000) translate(-41.418746, -41.729242) "></path>
+                    </g>
+                    <path d="M5.81937925,43.8709677 L5.81937925,51.8709677" id="Line" stroke="#DD4D15" stroke-width="5.2" stroke-linecap="square"></path>
+                    <path d="M77.0193304,43.8709677 L77.0193304,51.8709677" id="Line-Copy" stroke="#CF4610" stroke-width="5.2" stroke-linecap="square"></path>
+                    <mask id="mask-3" fill="white">
+                        <use xlink:href="#path-2"></use>
+                    </mask>
+                    <use id="Rectangle-7-Copy-3" fill="#F55314" transform="translate(41.418746, 41.729242) rotate(45.000000) translate(-41.418746, -41.729242) " xlink:href="#path-2"></use>
+                    <path d="M41,45 C45.9705627,45 50,42.8659932 50,39 C50,35.1340068 45.9705627,32 41,32 C36.0294373,32 32,35.1340068 32,39 C32,42.8659932 36.0294373,45 41,45 Z" id="Oval-2-Copy-3" fill="#CF4610" mask="url(#mask-3)"></path>
+                </g>
+                <polygon id="Rectangle-3" fill="#000000" opacity="0.100000001" points="91 91 103 91 126 106 114 113 90 98"></polygon>
+                <path d="M102.986817,92.4760778 L102.986817,58 L87,58 L87,93.4217128 L87.0311841,93.4217128 C87.3092339,97.2603134 90.7736789,99 95.0065914,99 C99.2395039,99 102.703949,97.2603134 102.981999,93.4217128 L102.986817,93.4217128 L102.986817,93.3498322 C102.995566,93.2079552 103,93.0632465 103,92.9156883 C103,92.7681302 102.995566,92.6215555 102.986817,92.4760778 Z" id="Combined-Shape" fill="url(#linearGradient-4)"></path>
+                <circle id="Oval" fill="#FFD217" cx="95" cy="58" r="18"></circle>
+                <ellipse id="Oval-3" fill="#E6BA08" cx="96.5" cy="58.5" rx="16.5" ry="17.5"></ellipse>
+                <ellipse id="Oval-2-Copy-2" fill="#D04510" cx="71" cy="96" rx="8" ry="5"></ellipse>
+                <ellipse id="Oval-2-Copy-4" fill="#000000" opacity="0.100000001" cx="73" cy="97.5" rx="7" ry="4.5"></ellipse>
+                <path d="M71,100 C74.8659932,100 78,97.9852814 78,95.5 C78,94.9629368 78,93 78,93 C78,93 74.0305617,91 71,91 C68.4984986,91 64,93 64,93 C64,93 64,94.6228267 64,95.5 C64,97.9852814 67.1340068,100 71,100 Z" id="Oval-2" fill="#D77E00"></path>
+                <ellipse id="Oval-2-Copy" fill="#F99200" cx="71" cy="93.5" rx="7" ry="4.5"></ellipse>
+            </g>
+        </g>
+    </g>
+</svg>

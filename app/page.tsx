@@ -1,113 +1,235 @@
-import Image from 'next/image'
+"use client";
+
+import Image from "next/image";
+import { JSX, useEffect, useState } from "react";
 
 export default function Home() {
+  var [date, setDate] = useState<Date>(new Date());
+  var [showTime, setShowTime] = useState<string>();
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setDate(new Date());
+      setShowTime(
+        date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds()
+      );
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [date]);
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="flex flex-row flex-wrap items-center justify-center h-[100vh]">
+      <div className="content-start">
+        <div className="flex flex-wrap flex-col">
+          <div className="flex flex-row flex-wrap items-center justify-center">
+            {date.getHours() > 6 && date.getHours() < 18 ? (
+              <Image
+                src="/img/sol.svg"
+                alt={""}
+                width={100}
+                height={100}
+              ></Image>
+            ) : (
+              <Image
+                src="/img/luna.svg"
+                alt={""}
+                width={100}
+                height={100}
+              ></Image>
+            )}
+            <div className="flex flex-col flex-1 flex-wrap">
+              <h2 className="text-xl">{showTime}</h2>
+              <h2>{currentSeason(date.getMonth(), date.getDate())}</h2>
+            </div>
+          </div>
+        </div>
+
+        <div className="w-64 border-2 shadow rounded flex flex-row">
+          {hearts(3)}
+        </div>
+
+        <div className="w-96 border-2 shadow rounded flex flex-wrap">
+          {currentMood(Mood.Triste)}
+        </div>
+
+        <div className="w-96 border-2 shadow rounded">
+          <div className="flex flex-row">
+            {showButtons(ImageButton.Proyectos)}
+
+            {showButtons(ImageButton.GitHub)}
+
+            {showButtons(ImageButton.Games)}
+          </div>
+          <div className="flex flex-row">
+            {showButtons(ImageButton.Instagram)}
+
+            {showButtons(ImageButton.ArtStation)}
+
+            {showButtons(ImageButton.YouTube)}
+          </div>
         </div>
       </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
+      <div className="h-500 w-500 bg-red border-4">
         <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+          src="/img/astrid.svg"
+          alt={""}
+          width={500}
+          height={500}
+          z-1
+        ></Image>
       </div>
+    </div>
+  );
+}
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+enum Season {
+  Verano = "Verano",
+  Otoño = "Otoño",
+  Invierno = "Invierno",
+  Primavera = "Primavera",
+}
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+function currentSeason(month: number, day: number): Season {
+  let seasons: { [month: number]: (day: number) => Season } = {
+    0: (_) => Season.Verano,
+    1: (_) => Season.Verano,
+    2: (day: number) => (day < 21 ? Season.Verano : Season.Otoño),
+    3: (_) => Season.Otoño,
+    4: (_) => Season.Otoño,
+    5: (day: number) => (day < 21 ? Season.Otoño : Season.Invierno),
+    6: (_) => Season.Invierno,
+    7: (_) => Season.Invierno,
+    8: (day: number) => (day < 21 ? Season.Invierno : Season.Primavera),
+    9: (_) => Season.Primavera,
+    10: (_) => Season.Primavera,
+    11: (day: number) => (day < 21 ? Season.Primavera : Season.Verano),
+  };
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
+  return seasons[month](day);
+}
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+function hearts(filled: number): JSX.Element[] {
+  let result = [];
+  for (let heart = 0; heart <= 4; heart++) {
+    result.push(
+      <Image
+        key={heart}
+        src={heart < filled ? "/img/heart.svg" : "/img/heart-line.svg"}
+        alt={""}
+        width={50}
+        height={50}
+      ></Image>
+    );
+  }
+  return result;
+}
+
+enum Mood {
+  Feliz = "Feliz",
+  Vacaciones = "Vacaciones",
+  Enferma = "Enferma",
+  PreocupadaApretada = "PreocupadaApretada",
+  PreocupadaTranquila = "PreocupadaTranquila",
+  Triste = "Triste",
+}
+
+function currentMood(mood: Mood) {
+  let moodValues: Record<Mood, any> = {
+    Feliz: {
+      imagen: "/img/feliz.svg",
+      texto:
+        "Estoy con pocos proyectos, por lo que tengo tiempo disponible ◕⩊◕",
+    },
+    Vacaciones: {
+      imagen: "/img/vacaciones.svg",
+      texto:
+        "Estoy de vacaciones. Si me mandas un email o mensaje, lo voy a contestar de a partir del: **/** , perdón ૮₍ ˃ ⤙ ˂ ₎ა",
+    },
+    Enferma: {
+      imagen: "/img/enferma.svg",
+      texto:
+        "Estoy enferma, asi que por el momento no voy a contestar emails y/omensajes, perdón ૮₍ ˃ ⤙ ˂ ₎ა",
+    },
+    PreocupadaApretada: {
+      imagen: "/img/preocupada-apretada.svg",
+      texto:
+        "Estoy en momentos cruciales con varios proyectos. Si me mandas un email o mensaje, lo voy a contestar tarde, perdón ૮₍ ˃ ⤙ ˂ ₎ა",
+    },
+    PreocupadaTranquila: {
+      imagen: "/img/preocupada-tranquila.svg",
+      texto: "Estoy con proyectos, pero aun hay lugar para uno más ◕⩊◕",
+    },
+    Triste: {
+      imagen: "/img/triste.svg",
+      texto:
+        "Estoy ocupadísimas con varios proyectos. Si me mandas un email o mensaje, lo voy a contestar tarde, perdón ૮₍ ˃ ⤙ ˂ ₎ა",
+    },
+  };
+  return (
+    <div className="flex flex-row">
+      <Image
+        src={moodValues[mood].imagen}
+        alt={""}
+        width={100}
+        height={100}
+      ></Image>
+      <div className="flex flex-col">
+        <h1>Mood:</h1>
+        <h2>{moodValues[mood].texto}</h2>
       </div>
-    </main>
-  )
+    </div>
+  );
+}
+
+enum ImageButton {
+  Proyectos = "Proyectos",
+  ArtStation = "ArtStation",
+  Games = "Games",
+  Instagram = "Instagram",
+  GitHub = "GitHub",
+  YouTube = "YouTube",
+}
+
+function showButtons(button: ImageButton) {
+  let buttonValues: Record<ImageButton, any> = {
+    Proyectos: {
+      imagen: "/img/boton-proyects.svg",
+      link: "/proyects",
+    },
+    ArtStation: {
+      imagen: "/img/boton-artstation.svg",
+      link: "https://www.artstation.com/astridkittten",
+    },
+    Games: {
+      imagen: "/img/boton-games.svg",
+      link: "/games",
+    },
+    Instagram: {
+      imagen: "/img/boton-instagram.svg",
+      link: "https://www.instagram.com/astrid_nyaa/?igshid=MzNlNGNkZWQ4Mg%3D%3D",
+    },
+    GitHub: {
+      imagen: "/img/boton-github.svg",
+      link: "https://github.com/AngelaHCobos",
+    },
+    YouTube: {
+      imagen: "/img/boton-youtube.svg",
+      link: "https://www.youtube.com/@paraparalat",
+    },
+  };
+  return (
+    <div>
+      <button>
+        <a href={buttonValues[button].link}>
+          <Image
+            src={buttonValues[button].imagen}
+            alt={""}
+            width={100}
+            height={100}
+          ></Image>
+        </a>
+      </button>
+    </div>
+  );
 }
