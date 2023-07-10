@@ -47,7 +47,7 @@ function showGames(game: Game) {
       link: "https://ldjam.com/users/astrid/games",
     },
     JuegoDeMesa: {
-      imagen: "/img/ludumdare-controller.svg",
+      imagen: "img/ludumdare-controller.svg",
       titulo: "Juego de Mesa",
       resumen:
         "Sumérgete en un emocionante juego de mesa en desarrollo de la categoría deckbuilder. Construye tu mazo de cartas único mientras exploras estrategias, tomas decisiones tácticas y te enfrentas a desafíos intrigantes. Prepárate para una experiencia inmersiva y llena de emoción mientras descubres el mundo en constante evolución de este juego de mesa de próxima generación. ¡Prepárate para construir, competir y dominar en este emocionante juego de mesa deckbuilder en desarrollo!",
