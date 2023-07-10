@@ -72,7 +72,7 @@ export default function Home() {
 
       <div className="h-500 w-500 bg-red border-4">
         <Image
-          src="/img/astrid.svg"
+          src="Profile/img/astrid.svg"
           alt={""}
           width={500}
           height={500}
