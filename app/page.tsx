@@ -115,7 +115,7 @@ function hearts(filled: number): JSX.Element[] {
     result.push(
       <Image
         key={heart}
-        src={heart < filled ? "/img/heart.svg" : "/img/heart-line.svg"}
+        src={heart < filled ? "img/heart.svg" : "/img/heart-line.svg"}
         alt={""}
         width={50}
         height={50}
@@ -142,26 +142,26 @@ function currentMood(mood: Mood) {
         "Estoy con pocos proyectos, por lo que tengo tiempo disponible ◕⩊◕",
     },
     Vacaciones: {
-      imagen: "/img/vacaciones.svg",
+      imagen: "img/vacaciones.svg",
       texto:
         "Estoy de vacaciones. Si me mandas un email o mensaje, lo voy a contestar de a partir del: **/** , perdón ૮₍ ˃ ⤙ ˂ ₎ა",
     },
     Enferma: {
-      imagen: "/img/enferma.svg",
+      imagen: "img/enferma.svg",
       texto:
         "Estoy enferma, asi que por el momento no voy a contestar emails y/omensajes, perdón ૮₍ ˃ ⤙ ˂ ₎ა",
     },
     PreocupadaApretada: {
-      imagen: "/img/preocupada-apretada.svg",
+      imagen: "img/preocupada-apretada.svg",
       texto:
         "Estoy en momentos cruciales con varios proyectos. Si me mandas un email o mensaje, lo voy a contestar tarde, perdón ૮₍ ˃ ⤙ ˂ ₎ა",
     },
     PreocupadaTranquila: {
-      imagen: "/img/preocupada-tranquila.svg",
+      imagen: "img/preocupada-tranquila.svg",
       texto: "Estoy con proyectos, pero aun hay lugar para uno más ◕⩊◕",
     },
     Triste: {
-      imagen: "/img/triste.svg",
+      imagen: "img/triste.svg",
       texto:
         "Estoy ocupadísimas con varios proyectos. Si me mandas un email o mensaje, lo voy a contestar tarde, perdón ૮₍ ˃ ⤙ ˂ ₎ა",
     },
@@ -194,27 +194,27 @@ enum ImageButton {
 function showButtons(button: ImageButton) {
   let buttonValues: Record<ImageButton, any> = {
     Proyectos: {
-      imagen: "/img/boton-proyects.svg",
+      imagen: "img/boton-proyects.svg",
       link: "/proyects",
     },
     ArtStation: {
-      imagen: "/img/boton-artstation.svg",
+      imagen: "img/boton-artstation.svg",
       link: "https://www.artstation.com/astridkittten",
     },
     Games: {
-      imagen: "/img/boton-games.svg",
+      imagen: "img/boton-games.svg",
       link: "/games",
     },
     Instagram: {
-      imagen: "/img/boton-instagram.svg",
+      imagen: "img/boton-instagram.svg",
       link: "https://www.instagram.com/astrid_nyaa/?igshid=MzNlNGNkZWQ4Mg%3D%3D",
     },
     GitHub: {
-      imagen: "/img/boton-github.svg",
+      imagen: "img/boton-github.svg",
       link: "https://github.com/AngelaHCobos",
     },
     YouTube: {
-      imagen: "/img/boton-youtube.svg",
+      imagen: "img/boton-youtube.svg",
       link: "https://www.youtube.com/@paraparalat",
     },
   };
