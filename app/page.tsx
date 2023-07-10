@@ -24,14 +24,14 @@ export default function Home() {
           <div className="flex flex-row flex-wrap items-center justify-center">
             {date.getHours() > 6 && date.getHours() < 18 ? (
               <Image
-                src="/img/sol.svg"
+                src="Profile/img/sol.svg"
                 alt={""}
                 width={100}
                 height={100}
               ></Image>
             ) : (
               <Image
-                src="/img/luna.svg"
+                src="Profile/img/luna.svg"
                 alt={""}
                 width={100}
                 height={100}
@@ -49,7 +49,7 @@ export default function Home() {
         </div>
 
         <div className="w-96 border-2 shadow rounded flex flex-wrap">
-          {currentMood(Mood.Triste)}
+          {currentMood(Mood.Feliz)}
         </div>
 
         <div className="w-96 border-2 shadow rounded">
